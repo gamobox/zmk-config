@@ -40,6 +40,11 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
+
+        caps_lock {
+            bindings = <&kp CAPS>;
+            key-positions = <0 1>;
+        };
     };
 
     macros {
@@ -78,10 +83,10 @@
 
         MODIFIER {
             bindings = <
-&kp GRAVE       &kp AT_SIGN     &kp HASH         &kp DOLLAR    &kp EXCLAMATION                             &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS          &kp LS(EQUAL)  &trans
-&kp PERCENT     &kp CARET       &kp AMPERSAND    &kp ASTERISK  &kp QUESTION     &trans      &trans         &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LS(SEMICOLON)  &kp LS(SQT)    &trans
-&trans          &kp UP_ARROW    &trans           &trans        &trans           &trans      &trans         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SLASH          &kp BACKSLASH  &trans
-&kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans        &trans           &trans      &kp LESS_THAN  &kp GREATER_THAN                                                               &trans
+&kp GRAVE       &kp AT_SIGN     &kp HASH         &kp DOLLAR    &kp EXCLAMATION                               &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS          &kp LS(EQUAL)  &trans
+&kp PERCENT     &kp CARET       &kp AMPERSAND    &kp ASTERISK  &kp QUESTION     &mkp MB1      &trans         &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LS(SEMICOLON)  &kp LS(SQT)    &trans
+&trans          &kp UP_ARROW    &trans           &trans        &trans           &trans        &trans         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SLASH          &kp BACKSLASH  &trans
+&kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans        &trans           &trans        &kp LESS_THAN  &kp GREATER_THAN                                                               &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
