@@ -19,12 +19,12 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <10 11>;
+            key-positions = <0 1>;
         };
 
         shift_tab {
             bindings = <&kp LS(TAB)>;
-            key-positions = <12 11>;
+            key-positions = <11 10>;
         };
 
         double_quotation {
@@ -32,14 +32,9 @@
             key-positions = <0 10>;
         };
 
-        eq {
-            bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
-        };
-
         caps_lock {
             bindings = <&kp CAPS>;
-            key-positions = <0 1>;
+            key-positions = <9 8>;
         };
     };
 
@@ -66,17 +61,34 @@
             compatible = "zmk,behavior-macro";
             label = "Taskview";
             #binding-cells = <0>;
-            bindings = <
-                &macro_press &kp LGUI     // Winキー押しっぱなし
-                &macro_tap  &kp TAB       // Tabキーをタップ
-                &macro_release &kp LGUI   // Winキーを離す
-            >;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_release>,
+                <&kp LGUI>;
+        };
+
+        eq: eqeqeq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp EQUAL>;
+            label = "EQEQEQ";
+        };
+
+        not_eq: not_eq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EXCL &kp EQUAL>;
+            label = "NOT_EQ";
         };
 
         scroll_up_down: scroll_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+
             tap-ms = <20>;
         };
     };
@@ -86,10 +98,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E    &kp R                        &kp T                                                   &kp Y        &kp U  &kp I      &kp O      &kp P
-&kp A             &kp S         &kp D    &kp F                        &kp G        &mkp MB1                    &trans         &kp H        &kp J  &kp K      &kp L      &kp MINUS
-&kp Z             &kp X         &kp C    &kp V                        &kp B        &taskview_macro             &trans         &kp N        &kp M  &mkp LCLK  &mkp RCLK  &kp SLASH
-&kp LEFT_CONTROL  &kp LEFT_ALT  &kp TAB  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 SPACE      &kp BACKSPACE  &lt 1 ENTER                               &kp ESCAPE
+&kp Q           &kp W             &kp E         &kp R                        &kp T                                                   &kp Y        &kp U  &kp I      &kp O      &kp P
+&kp A           &kp S             &kp D         &kp F                        &kp G        &mkp MB1                    &trans         &kp H        &kp J  &kp K      &kp L      &kp MINUS
+&kp Z           &kp X             &kp C         &kp V                        &kp B        &taskview_macro             &trans         &kp N        &kp M  &mkp LCLK  &mkp RCLK  &kp SLASH
+&kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &lt_to_layer_0 1 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 SPACE      &kp BACKSPACE  &lt 1 ENTER                               &kp ESCAPE
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -97,28 +109,28 @@
 
         MODIFIER {
             bindings = <
-&kp GRAVE       &kp AT_SIGN     &kp HASH         &kp DOLLAR    &kp EXCLAMATION                                  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS             &kp LS(EQUAL)  &kp COLON
-&kp PERCENT     &kp CARET       &kp AMPERSAND    &kp ASTERISK  &kp QUESTION     &mkp MB1      &kp LEFT_BRACE    &kp RIGHT_BRACE       &kp LESS_THAN          &kp GREATER_THAN      &kp LS(SQT)    &kp SEMICOLON
-&trans          &kp UP_ARROW    &trans           &trans        &trans           &trans        &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp SLASH              &kp NON_US_BACKSLASH  &kp PIPE       &kp SQT
-&kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans        &trans           &trans        &trans            &trans                                                                            &trans
+&kp GRAVE       &kp AT_SIGN     &kp HASH         &kp DOLLAR    &kp EXCLAMATION                                &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS             &kp LS(EQUAL)  &kp COLON
+&kp PERCENT     &kp CARET       &kp AMPERSAND    &kp ASTERISK  &kp QUESTION     &trans      &kp LEFT_BRACE    &kp RIGHT_BRACE       &kp LESS_THAN          &kp GREATER_THAN      &kp LS(SQT)    &kp SEMICOLON
+&trans          &kp UP_ARROW    &trans           &trans        &trans           &trans      &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp SLASH              &kp NON_US_BACKSLASH  &kp PIPE       &kp SQT
+&kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans        &trans           &trans      &trans            &trans                                                                            &trans
             >;
         };
 
         NUM {
             bindings = <
-&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                                   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PLUS     &kp MINUS
-&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ASTRK    &kp SLASH
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL                    &kp NUMBER_0    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERCENT  &kp EQUAL
-&trans                      &trans           &trans           &trans           &trans        &trans                       &trans          &trans                                                 &kp COMMA
+&kp NUMBER_1                &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                      &kp NUMBER_6  &kp N7     &kp N8        &kp N9     &kp N0
+&trans                      &trans        &trans        &trans        &trans  &trans      &trans  &kp PLUS      &kp MINUS  &kp ASTERISK  &kp SLASH  &kp EQUAL
+&mt LEFT_SHIFT KP_NUMBER_0  &trans        &trans        &trans        &trans  &trans      &trans  &kp PERCENT   &kp LT     &kp GT        &kp COMMA  &kp PERIOD
+&trans                      &trans        &trans        &trans        &trans  &trans      &trans  &trans                                            &trans
             >;
         };
 
-        ARROW {
+        MACROS {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans  &trans  &trans  &trans  &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                          &trans
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans  &trans  &trans  &kp HOME  &kp PAGE_UP
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &trans  &trans  &kp END   &kp PAGE_DOWN
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &trans  &trans  &trans    &trans
+&trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                            &trans
             >;
         };
 
@@ -131,16 +143,7 @@
             >;
         };
 
-        SCROLL {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
-            >;
-        };
-
-        layer_6 {
+        BLUETOOTH {
             bindings = <
 &to_layer_0 NUMBER_1  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans                &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
