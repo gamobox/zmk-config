@@ -37,7 +37,7 @@
             key-positions = <9 8>;
         };
 
-        GUI {
+        left_gui {
             bindings = <&kp LEFT_WIN>;
             key-positions = <40 41>;
         };
