@@ -114,10 +114,10 @@
 
         MODIFIER {
             bindings = <
-&kp GRAVE       &kp AT_SIGN     &kp HASH         &kp DOLLAR    &kp EXCLAMATION                                &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS             &kp LS(EQUAL)  &kp COLON
-&kp PERCENT     &kp CARET       &kp AMPERSAND    &kp ASTERISK  &kp QUESTION     &trans      &kp LEFT_BRACE    &kp RIGHT_BRACE       &kp LESS_THAN          &kp GREATER_THAN      &kp LS(SQT)    &kp SEMICOLON
-&trans          &kp UP_ARROW    &trans           &trans        &trans           &trans      &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp SLASH              &kp NON_US_BACKSLASH  &kp PIPE       &kp SQT
-&kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans        &trans           &trans      &trans            &trans                                                                            &trans
+&kp GRAVE       &kp AT_SIGN     &kp HASH         &kp DOLLAR    &kp EXCLAMATION                                &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS             &kp EQUAL         &kp COLON
+&kp PERCENT     &kp CARET       &kp AMPERSAND    &kp ASTERISK  &kp QUESTION     &trans      &kp LEFT_BRACE    &kp RIGHT_BRACE       &kp LESS_THAN          &kp GREATER_THAN      &kp SINGLE_QUOTE  &kp SEMICOLON
+&trans          &kp UP_ARROW    &trans           &trans        &trans           &trans      &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp SLASH              &kp NON_US_BACKSLASH  &kp PIPE          &kp SQT
+&kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans        &trans           &trans      &trans            &trans                                                                               &trans
             >;
         };
 
