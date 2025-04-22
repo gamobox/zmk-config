@@ -82,6 +82,13 @@
             label = "WIN_SCREENSHOT";
         };
 
+        date_format: date_format {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LS(Y) &kp LS(Y) &kp LS(Y) &kp LS(Y) &kp MINUS &kp LS(M) &kp LS(M) &kp MINUS &kp LS(D) &kp LS(D) &kp SPACE &kp LS(H) &kp LS(H) &kp COLON &kp M &kp M &kp COLON &kp S &kp S>;
+            label = "DATE_FORMAT";
+        };
+
         scroll_up_down: scroll_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
