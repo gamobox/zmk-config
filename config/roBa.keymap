@@ -22,8 +22,8 @@
             key-positions = <0 1>;
         };
 
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
+        vscode_reindent {
+            bindings = <&kp LS(LA(F))>;
             key-positions = <11 10>;
         };
 
@@ -34,12 +34,12 @@
 
         caps_lock {
             bindings = <&kp CAPS>;
-            key-positions = <9 8>;
+            key-positions = <3 4>;
         };
 
-        left_gui {
-            bindings = <&kp LEFT_WIN>;
-            key-positions = <40 41>;
+        delete {
+            bindings = <&kp DELETE>;
+            key-positions = <9 8>;
         };
     };
 
