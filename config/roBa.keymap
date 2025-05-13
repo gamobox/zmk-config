@@ -41,6 +41,36 @@
             bindings = <&kp DELETE>;
             key-positions = <9 8>;
         };
+
+        left_click {
+            bindings = <&mkp MB1>;
+            key-positions = <11 12>;
+        };
+
+        right_click {
+            bindings = <&mkp MB2>;
+            key-positions = <13 12>;
+        };
+
+        arrow_up {
+            bindings = <&kp UP_ARROW>;
+            key-positions = <7 8>;
+        };
+
+        arrow_down {
+            bindings = <&kp DOWN_ARROW>;
+            key-positions = <31 32>;
+        };
+
+        arrow_left {
+            bindings = <&kp LEFT_ARROW>;
+            key-positions = <18 19>;
+        };
+
+        arrow_right {
+            bindings = <&kp RIGHT_ARROW>;
+            key-positions = <21 20>;
+        };
     };
 
     macros {
