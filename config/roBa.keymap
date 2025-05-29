@@ -162,10 +162,10 @@
 
         CONTROL {
             bindings = <
-&kp F1   &kp F2   &kp F3   &kp F4   &kp F5                       &kp PAGE_UP  &kp PAGE_DOWN  &kp HOME  &kp END       &kp ESCAPE
-&kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans      &trans  &trans       &trans         &none     &kp UP_ARROW  &none
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans      &trans  &trans       &trans         &kp LEFT  &kp DOWN      &kp RIGHT
-&trans   &trans   &trans   &trans   &trans   &trans      &trans  &trans                                              &kp LC(LS(ESCAPE))
+&kp F1   &kp F2   &kp F3   &kp F4   &kp F5                        &trans    &trans         &trans    &trans        &trans
+&kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans      &kp INS  &kp HOME  &kp PAGE_UP    &none     &kp UP_ARROW  &none
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans      &kp DEL  &kp END   &kp PAGE_DOWN  &kp LEFT  &kp DOWN      &kp RIGHT
+&trans   &trans   &trans   &trans   &trans   &trans      &trans   &trans                                           &kp LC(LS(ESCAPE))
             >;
         };
 
